@@ -1,0 +1,40 @@
+.card{
+    margin: 5px;
+    height: 150px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: rgb(195, 155, 221);
+}
+
+.botonVer{
+    border-radius: 5px;
+    background-color: darkorange;
+    position: relative;
+    bottom: 95px;
+    left: 168px;
+    height: 17px;
+    width: 61px;
+    font-size: 10px;
+}
+
+.imagenDep{
+    height: 90px;
+    width: 90px;
+    position: relative;
+    bottom: 30px;
+    left: 70px;
+}
+
+.nombre{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.especialidad{
+    position: relative;
+    bottom: 55px;
+    display: flex;
+    justify-content: center;
+}

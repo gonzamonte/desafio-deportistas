@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Lista from "./components/Lista";
+import { useEffect, useState } from "react";
+import { getDeportistas } from "./api/Rule_info";
 
 function App() {
+  const [arrayDeportistas, setArrayDeportistas] = useState([]);
+  useEffect(() => {
+    getDeportistas().then((data) => {
+      setArrayDeportistas(data);
+      setArrayOriginal(data);
+    });
+  }, []);
+
+  const [arrayOriginal, setArrayOriginal] = useState([]);
+  const filtrar = (buscar) => {
+    if (buscar === "") {
+      setArrayDeportistas(arrayOriginal);
+    } else {
+      const arrayFiltrado = [...arrayOriginal].filter((deportista) => {
+        if (buscar === "") {
+          return deportista;
+        } else {
+          return deportista.nombre.toLowerCase().includes(buscar.toLowerCase());
+        }
+      });
+      setArrayDeportistas(arrayFiltrado);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="contenedor">
+      <Header filtrar={filtrar} className="header" />
+      <Lista listaDeportistas={arrayDeportistas} className="cuadrados" />
+      <Footer className="footer" />
     </div>
   );
 }

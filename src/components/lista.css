@@ -1,0 +1,21 @@
+.cont-cuadrados{
+/*     background-color: brown; */
+    height: 350px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+/* .lista{
+    display: flex;
+    width: 100%;
+    background-color: #F7F7F7;
+    flex-direction: row;
+    flex-wrap: wrap;;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+} */

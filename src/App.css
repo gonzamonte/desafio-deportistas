@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+
+.contenedor{
+  /*   margin: 0; */
+    box-sizing: border-box;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: "header"
+                        "cuadrados"
+                        "footer";
+                        height: 800px;
+                        width: 800px;
+  }
+
+
+  .header{
+    grid-area:header
+}
+.cuadrados{
+  grid-area:cuadrados
+
+}
+.footer{
+  grid-area:footer
+}
